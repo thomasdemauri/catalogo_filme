@@ -47,7 +47,14 @@ if ($result->num_rows > 0) {
 
             <tr class="hover:bg-gray-50">
               <td class="border border-gray-300 px-4 py-3"><?= $movie['id'] ?></td>
-              <td class="border border-gray-300 px-4 py-3"><?= $movie['titulo'] ?></td>
+              <td class="border border-gray-300 px-4 py-3">
+                <a 
+                  href="detail_view.php?id=<?=$movie['id']?>"  
+                  class="hover:underline hover:text-blue-800 transition"
+                >
+                  <?= $movie['titulo'] ?>
+                </a>
+              </td>
               <td class="border border-gray-300 px-4 py-3"><?= $movie['genero'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center"><?= $movie['avaliacao'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center"><?= $movie['ano_lancamento'] ?></td>
@@ -60,13 +67,16 @@ if ($result->num_rows > 0) {
                         d="M15.232 5.232l3.536 3.536M9 11l6 6m-6-6l-2 2m5 5h3a2 2 0 002-2v-3m-3-3L9 11z" />
                 </svg>
               </a>
-    
-                <!-- Botão Excluir -->
+              
+              <!-- Botão Excluir -->
+              <form action="delete.php" method="post">
+                <input type="hidden" name="id" value="<?= $movie['id'] ?>">
                 <button aria-label="Excluir" title="Excluir" class="text-red-600 hover:text-red-800 transition">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 7L5 21M5 7l14 14" />
                   </svg>
                 </button>
+              </form>
               </td>
             </tr>
 

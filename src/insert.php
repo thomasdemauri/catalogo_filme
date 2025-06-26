@@ -21,6 +21,7 @@ $stmt->bind_param(
 
 $row = $stmt->execute();
 
+$stmt->close();
 $connection->closeConnection();
 
 header("Location: list_movies_view.php");
