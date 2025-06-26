@@ -66,8 +66,8 @@
           Salvar Filme
         </button>
       </div>
-
     </form>
+    <a href="list_movies_view.php"><strong>Ver filmes</strong></a>
   </div>
 </body>
 </html>

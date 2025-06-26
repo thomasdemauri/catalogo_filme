@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
     <table class="min-w-full border-collapse border border-gray-300">
       <thead>
         <tr class="bg-gray-200 text-gray-700">
+          <th class="border border-gray-300 px-4 py-2 text-left">Id</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Título</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Gênero</th>
           <th class="border border-gray-300 px-4 py-2 text-center">Avaliação</th>
@@ -45,17 +46,20 @@ if ($result->num_rows > 0) {
         <?php foreach($movies as $movie): ?>
 
             <tr class="hover:bg-gray-50">
+              <td class="border border-gray-300 px-4 py-3"><?= $movie['id'] ?></td>
               <td class="border border-gray-300 px-4 py-3"><?= $movie['titulo'] ?></td>
               <td class="border border-gray-300 px-4 py-3"><?= $movie['genero'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center"><?= $movie['avaliacao'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center"><?= $movie['ano_lancamento'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center flex justify-center space-x-2">
-                <!-- Botão Editar -->
-                <button aria-label="Editar" title="Editar" class="text-blue-600 hover:text-blue-800 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l6 6m-6-6l-2 2m5 5h3a2 2 0 002-2v-3m-3-3L9 11z" />
-                  </svg>
-                </button>
+
+              <a href="edit.php?id=<?= $filme['id'] ?>" class="text-blue-600 hover:text-blue-800 transition" title="Editar">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.232 5.232l3.536 3.536M9 11l6 6m-6-6l-2 2m5 5h3a2 2 0 002-2v-3m-3-3L9 11z" />
+                </svg>
+              </a>
     
                 <!-- Botão Excluir -->
                 <button aria-label="Excluir" title="Excluir" class="text-red-600 hover:text-red-800 transition">
@@ -69,6 +73,7 @@ if ($result->num_rows > 0) {
         <?php endforeach; ?>
       </tbody>
     </table>
+    <a href="insert_view.php">Inserir +</a>
   </div>
 </body>
 </html>
