@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
               <td class="border border-gray-300 px-4 py-3 text-center"><?= $movie['ano_lancamento'] ?></td>
               <td class="border border-gray-300 px-4 py-3 text-center flex justify-center space-x-2">
 
-              <a href="edit.php?id=<?= $filme['id'] ?>" class="text-blue-600 hover:text-blue-800 transition" title="Editar">
+              <a href="edit_view.php?id=<?= $movie['id'] ?>" class="text-blue-600 hover:text-blue-800 transition" title="Editar">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round"
